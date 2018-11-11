@@ -4,27 +4,27 @@ Projeto desenvolvido em aula com Spring Boot, Spring DataJPA, Thymeleaf e arquit
 
 ## Equipe
 
-Bruno Felix
-Glaube Nobrega
-Leandro Marcelino
-Mauricio Morais
+* Bruno Felix
+* Glaube Nobrega
+* Leandro Marcelino
+* Mauricio Morais
 
 ## Rotas implementadas
 
 ### VIEWS (html)
 
-GET 	- /products
-GET 	- /products/form
-GET 	- /products/form/{id}
-POST 	- /products/save
-PUT 	- /products/save
-DELETE 	- /products/delete/{id}
+* GET 	- /products
+* GET 	- /products/form
+* GET 	- /products/form/{id}
+* POST 	- /products/save
+* PUT 	- /products/save
+* DELETE 	- /products/delete/{id}
 
 
 ### URIs (json)
 
-POST 	- /api/products
-GET 	- /api/products
-GET 	- /api/products/{id}
-PUT 	- /api/products/{id}
-DELETE 	- /api/products/{id}
+* POST 	- /api/products
+* GET 	- /api/products
+* GET 	- /api/products/{id}
+* PUT 	- /api/products/{id}
+* DELETE 	- /api/products/{id}
