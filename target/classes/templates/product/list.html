@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Produtos</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+    <link href="/webjars/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Produtos</h1>
+    </div>
+    <div>
+        <a class="btn btn-primary" th:href="@{/products/form}">Novo</a>
+    </div>
+    <hr/>
+    <div th:if="${products != null}">
+        <h4>Produtos</h4>
+        <div th:if="${mensagem != null}">
+            <div class="alert alert-info" role="alert">
+                <span th:text="${mensagem}">mensagem</span>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Título</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tr th:each="product : ${products}">
+                <td>
+                    <a th:text="${product.title}" th:href="@{/products/{id}}">Título</a>
+                </td>
+                <td th:text="${product.description}">Descricao</td>
+                <td th:text="${product.price}">Preço</td>
+                <td>
+                    <a class="btn btn-sm btn-info" th:href="@{/products/form/{id}(id=${product.id})}">Editar</a>
+                    <a class="btn btn-sm btn-danger" th:href="@{/products/delete/{id}(id=${product.id})}">Excluir</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div th:if="${#lists.isEmpty(products)}">
+        <div class="alert alert-info" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign"></span>
+            Nenhum produto cadastrado.
+        </div>
+    </div>
+    <hr/>
+    <a class="btn btn-light" href="/">Voltar</a>
+    <hr/>
+    <footer class="footer">
+        <p>&copy; 2018 DevMedia</p>
+    </footer>
+</div>
+</body>
+</html>
